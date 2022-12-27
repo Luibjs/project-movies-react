@@ -11,9 +11,9 @@ export function MovieDetails(){
 
     useEffect(()=>{
         
-        fetch("https://api.themoviedb.org/3/movie/"+movieId,{
+        fetch(process.env.REACT_APP_API_DETAILS+movieId,{
             headers:{
-                Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNGY2NjA2ODBhY2ViZjBhYzBkMWFmZjA4ZDAwYmFmMSIsInN1YiI6IjYzMzcwZWNiMGE1MTdjMDA5Y2Q1MzlkYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.JkiqIj1EwF_eMNxiyXCSzNrvcC81v9gjqTPqk78XbIQ",
+                Authorization: "Bearer "+ process.env.REACT_APP_API_TOKEN,
                 "Content-Type": "application/json;charset=utf-8",
             },
         })
